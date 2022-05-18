@@ -6,41 +6,9 @@ const fs = require("fs");
 
 /* Define the classes we will be using to hold information
  * about the team.  */
-class Employee {
-    /* Managers, Engineers and Interns are Employees.  */
-    constructor(name, employee_ID, e_mail_address) {
-        this.name = name;
-        this.id = employee_ID;
-        this.email = e_mail_address;
-    }
-    getName() { return this.name };
-    getId() { return this.id };
-    getEmail() { return this.email };
-    getRole() { return "Employee" };
-}
-class Manager extends Employee {
-    constructor(name, employee_ID, e_mail_address, office_number) {
-        super(name, employee_ID, e_mail_address);
-        this.officeNumber = office_number;
-    }
-    getRole() { return "Manager" };
-}
-class Engineer extends Employee {
-    constructor(name, employee_ID, e_mail_address, github_user_name) {
-        super(name, employee_ID, e_mail_address);
-        this.github = github_user_name;
-    }
-    getGitHub() { return this.github };
-    gitRole() { return "Engineer" };
-}
-class Intern extends Employee {
-    constructor(name, employee_ID, e_mail_address, school_name) {
-        super(name, employee_ID, e_mail_address);
-        this.school = school_name;
-    }
-    getSchool() { return this.school };
-    getRole() { return "Intern" };
-}
+const Engineer = require("./lib/Engineer_class");
+const Intern = require("./lib/Intern_class");
+const Manager = require("./lib/Manager_class");
 
 /* Global variables */
 let team_members = [];
@@ -123,7 +91,7 @@ function add_to_team() {
         {
             type: "list",
             name: "choice",
-            message: "Would you like to add an Engineer or Intern " + 
+            message: "Would you like to add an Engineer or Intern " +
                 "to the team, or is the team complete?",
             choices: ["add an Engineer", "add an Intern", "team is complete"],
             default: "team is complete"
