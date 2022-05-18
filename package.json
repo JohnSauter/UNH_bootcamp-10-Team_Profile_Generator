@@ -1,0 +1,23 @@
+{
+  "name": "unh_bootcamp-10-team_profile_generator",
+  "version": "1.0.0",
+  "description": "generate a web page that displays basic information about a team",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnSauter/UNH_bootcamp-10-Team_Profile_Generator.git"
+  },
+  "author": "John Sauter",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/JohnSauter/UNH_bootcamp-10-Team_Profile_Generator/issues"
+  },
+  "homepage": "https://github.com/JohnSauter/UNH_bootcamp-10-Team_Profile_Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "jest": "^28.1.0"
+  }
+}
