@@ -3,15 +3,17 @@
 /* Include the packages needed for this application. */
 const inquirer = require("inquirer");
 const fs = require("fs");
+const mustache = require("mustache");
 
 /* Define the classes we will be using to hold information
- * about the team.  */
+ * about the team members.  */
 const Engineer = require("./lib/Engineer_class");
 const Intern = require("./lib/Intern_class");
 const Manager = require("./lib/Manager_class");
 
-/* Global variables */
-let team_members = [];
+/* An object with one property, which is a list of employees. 
+ * This is a convenient structure to feed to mustache. */
+let team_members = { employees: [] };
 
 /* First we ask the user for information about the team manager.
  * We then loop until the user exits, asking him whether he wants
@@ -77,7 +79,7 @@ function process_manager_answers(answers) {
         answers.manager_employee_ID,
         answers.manager_e_mail_address,
         answers.manager_office_number);
-    team_members.push(the_manager);
+    team_members.employees.push(the_manager);
     add_to_team();
 }
 
@@ -179,7 +181,7 @@ function process_engineer_answers(answers) {
         answers.engineer_employee_ID,
         answers.engineer_e_mail_address,
         answers.engineer_github_user_name);
-    team_members.push(the_engineer);
+    team_members.employees.push(the_engineer);
     add_to_team();
 }
 
@@ -233,7 +235,7 @@ function add_an_intern() {
         }
     ];
 
-    /* Get the answers to the Engineer questions.  */
+    /* Get the answers to the Intern questions.  */
     inquirer.prompt(intern_questions)
         .then(answers => process_intern_answers(answers));
 }
@@ -244,13 +246,16 @@ function process_intern_answers(answers) {
         answers.intern_employee_ID,
         answers.intern_e_mail_address,
         answers.intern_school_name);
-    team_members.push(the_intern);
+    team_members.employees.push(the_intern);
     add_to_team();
 }
 
-
-/* The team is complete.  */
+/* The team is complete.  We read in the template HTML file,
+ * edit it using mustache, then write out the results of the edit
+ * as the resulting HTML file.  
+ */
 function complete_team() {
-    console.log("team is complete");
-    console.log(team_members);
+    const template = fs.readFileSync("./src/index.html.in", "utf8");
+    const rendered_html = mustache.render(template, team_members);
+    fs.writeFileSync("./dist/index.html", rendered_html);
 }
