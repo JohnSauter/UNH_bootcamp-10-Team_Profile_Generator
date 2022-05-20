@@ -20,7 +20,7 @@ Use this program to display basic information about your team.
 
 ## Credits
 
-This project uses Jest and Mustache, standard Node packages.
+This project uses Inquirer, Jest and Mustache, standard Node packages.
 ## License
 GNU AGPLv3
 
