@@ -22,6 +22,9 @@ The generated HTML file is placed in ./dist/.  That directory
 also contains an assets subdirectory which has files used by
 the generated HTML file.
 
+You can download a walkthrough demonstrating how to use this program from this URL:
+https://github.com/JohnSauter/UNH_bootcamp-10-Team_Profile_Generator/blob/main/assets/videos/Walkthrough_of_Team_Profile_Generator.mp4
+
 ## Credits
 
 This project uses Inquirer, Jest and Mustache, standard Node.js packages.
@@ -38,7 +41,9 @@ Some suggestions on improving the web page&#39;s appearance would be very welcom
 npm run test
 
 ## Features
+
 The generated web page is very responsive.
+
 ## Questions
 
 If you have any questions, contact me.
