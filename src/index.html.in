@@ -12,23 +12,25 @@
 
 <body>
   <header id="header">
-    <h1>My Team</h1>
+    <h1 class="team_title">My Team</h1>
   </header>
 
   <main>
     <div class="grid-container">
-      <section id="team_members" 
-        class="grid-x grid-margin-x small-up-2 medium-up-3 large-up-5">
+      <div id="team_members" 
+        class="grid-x align-center grid-margin-x small-up-2 medium-up-3 large-up-5">
 
         {{#employees}}
-        <div class="cell float-center team_member_cell">
+        <div class="cell team_member_cell">
           <div class="card team_card medium-4 large-3">
             <div class="card-divider team_member_header">
               <div class="team_member_name">
                 {{name}}
               </div>
               <div class="team_member_role">
-                <img width="25px" height="25px" src="./assets/images/{{logo}}.svg">
+                <img width="25" height="25" 
+                  alt="logo representing role of employee"
+                  src="./assets/images/{{logo}}.svg">
                  {{role}}
               </div>
             </div>
@@ -37,14 +39,14 @@
                   <p>ID: {{id}}</p>
               </div>
               <div class="card-section team_member_info_item">
-                <p>e-mail: <a href="mailto:{{email}}">
+                <p>Email: <a href="mailto:{{email}}">
                   {{email}}</a></p>
               </div>
               <div class="card-section team_member_info_item">
                 {{#github}}<p>GitHub: <a href="https://github.com/{{github}}" 
                     target="_blank" rel="noopener noreferrer">
                     {{github}}</a></p>{{/github}}
-                    {{#officeNumber}}<p>Office: {{officeNumber}}</p>{{/officeNumber}}
+                    {{#officeNumber}}<p>Office Number: {{officeNumber}}</p>{{/officeNumber}}
                     {{#school}}<p>School: {{school}}</p>{{/school}}
               </div>
             </div>
@@ -52,7 +54,7 @@
         </div>
         {{/employees}}
         
-      </section> <!-- team members-->
+      </div> <!-- team members-->
     </div> <!-- grid container -->
   </main>
 

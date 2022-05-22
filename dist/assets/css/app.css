@@ -1,34 +1,42 @@
 #header {
     text-align: center;
     color: white;
-    background: red;
+    background: #E84756;
+    padding: 25px 0px;
+}
+
+.team_title {
+    font-size: 1.5rem;
+}
+
+a {
+    color: #8fb2ff; /* Cameron Blue */
 }
 
 .team_card {
-    box-shadow: 5px 5px 5px 5px #AAAAAA; 
+    box-shadow: 4px 4px 4px 4px #AAAAAA; 
     border-radius: 5px;
 }
 .team_member_header {
-    background: #0077f7;
+    background: #0077f7; /* Kolux */
     margin: 0;
     display: block;
 }
 
 .team_member_name {
-    background: #0077F7;
+    background: #0077F7; /* Kolux */
     color: white;
     margin: 0;
 }
 
 .team_member_role {
-    background: #0077F7;
+    background: #0077F7; /* Kolux */
     color: white;
     margin: 0;
 }
 
 .team_member_info_box {
-    background: #F5F6F8;
-    margin: 5px;
+    background: #F5F6F8; /* Chandrasekhar Limit */
     font-size: 75%;
 }
 
@@ -36,7 +44,7 @@
     background: white;
     border-style: solid;
     border-width: thin;
-    border-color: #E1E1E1;
+    border-color: #E1E1E1; /* Cotton Grey */
 }
 
 .team_member_cell {
