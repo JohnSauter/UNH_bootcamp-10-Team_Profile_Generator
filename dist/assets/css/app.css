@@ -4,12 +4,41 @@
     background: red;
 }
 
+.team_card {
+    box-shadow: 5px 5px 5px 5px #AAAAAA; 
+    border-radius: 5px;
+}
+.team_member_header {
+    background: #0077f7;
+    margin: 0;
+    display: block;
+}
+
 .team_member_name {
-    background: blue;
+    background: #0077F7;
     color: white;
+    margin: 0;
 }
 
 .team_member_role {
-    background: blue;
+    background: #0077F7;
     color: white;
+    margin: 0;
+}
+
+.team_member_info_box {
+    background: #F5F6F8;
+    margin: 5px;
+    font-size: 75%;
+}
+
+.team_member_info_item {
+    background: white;
+    border-style: solid;
+    border-width: thin;
+    border-color: #E1E1E1;
+}
+
+.team_member_cell {
+    margin: 10px;
 }

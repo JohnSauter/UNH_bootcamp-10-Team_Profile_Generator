@@ -17,30 +17,37 @@
 
   <main>
     <div class="grid-container">
-      <section id="team_members" class="grid-x">
+      <section id="team_members" 
+        class="grid-x grid-margin-x small-up-2 medium-up-3 large-up-5">
 
         {{#employees}}
-        <div class="card medium-4 large-3">
-          <div class="card-divider team_member_name">
-            {{name}}
-          </div>
-          <div class="card-divider team_member_role">
-            {{getRole}}
-          </div>
-          <div class="card section team_member_info">
-              <p>ID: {{id}}</p>
-          </div>
-          <div class="card section team_member_info">
-            <p>e-mail: 
-              <a href="mailto:{{email}}">
-              {{email}}</a></p>
-          </div>
-          <div class="card section team_member_info">
-            {{#github}}<p>GitHub: <a href="https://github.com/{{github}}" 
-                target="_blank" rel="noopener noreferrer">
-                {{github}}</a></p>{{/github}}
-                {{#officeNumber}}<p>Office: {{officeNumber}}</p>{{/officeNumber}}
-                {{#school}}<p>School: {{school}}</p>{{/school}}
+        <div class="cell float-center team_member_cell">
+          <div class="card team_card medium-4 large-3">
+            <div class="card-divider team_member_header">
+              <div class="team_member_name">
+                {{name}}
+              </div>
+              <div class="team_member_role">
+                <img width="25px" height="25px" src="./assets/images/{{logo}}.svg">
+                 {{role}}
+              </div>
+            </div>
+            <div class="card-section team_member_info_box">
+              <div class="card-section team_member_info_item">
+                  <p>ID: {{id}}</p>
+              </div>
+              <div class="card-section team_member_info_item">
+                <p>e-mail: <a href="mailto:{{email}}">
+                  {{email}}</a></p>
+              </div>
+              <div class="card-section team_member_info_item">
+                {{#github}}<p>GitHub: <a href="https://github.com/{{github}}" 
+                    target="_blank" rel="noopener noreferrer">
+                    {{github}}</a></p>{{/github}}
+                    {{#officeNumber}}<p>Office: {{officeNumber}}</p>{{/officeNumber}}
+                    {{#school}}<p>School: {{school}}</p>{{/school}}
+              </div>
+            </div>
           </div>
         </div>
         {{/employees}}

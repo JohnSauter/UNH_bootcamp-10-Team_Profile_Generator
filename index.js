@@ -15,6 +15,20 @@ const Manager = require("./lib/Manager_class");
  * This is a convenient structure to feed to mustache. */
 let team_members = { employees: [] };
 
+/* For debugging, see if we have the answers to the questions
+ * already stored, and if so use them.  */
+if (process.argv.length > 2) {
+    if (fs.existsSync(process.argv[2])) {
+        const team_string = fs.readFileSync(process.argv[2], "utf8");
+        if (team_string != null) {
+            team_members = JSON.parse(team_string);
+            complete_team();
+            process.exit(0);
+        }
+    }
+}
+
+
 /* First we ask the user for information about the team manager.
  * We then loop until the user exits, asking him whether he wants
  * to add an Engineer, add an Intern, or exit.  Thus we have four 
@@ -258,4 +272,10 @@ function complete_team() {
     const template = fs.readFileSync("./src/index.html.in", "utf8");
     const rendered_html = mustache.render(template, team_members);
     fs.writeFileSync("./dist/index.html", rendered_html);
+
+    /* For debugging, write out the answers to the questions.  */
+    if (process.argv.length > 2) {
+        const team_string = JSON.stringify(team_members, null, 4);
+        fs.writeFileSync(process.argv[2], team_string);
+    }
 }
