@@ -72,6 +72,25 @@ const manager_questions = [
             if (response == "") {
                 return "You must provide the e-mail address of the manager";
             }
+            let e_mail_regexp = RegExp ("^\\S+@\\S+$");
+            if (!e_mail_regexp.test(response)) {
+                return "Invalid e-mail address: must have local part, at sign, and domain name."
+            }
+            e_mail_regexp = RegExp ("^[A-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[A-Z0-9.-]+$", "i");
+            if (!e_mail_regexp.test(response)) {
+                return "Invalid e-mail address: it has disallowed characters."
+            } 
+            e_mail_regexp = RegExp ("^[A-Z0-9_!#$%&'*+/=?`{|}~^-]+(?:\\.[A-Z0-9_!#$%&'*+/=?`{|}~^-]+)*" + 
+                "@[A-Z0-9-]+(?:\\.[A-Z0-9-]+)*$", "i");
+            if (!e_mail_regexp.test(response)) {
+                return "Invalid e-mail address: no leading, trailing or consecutive."
+            }
+            e_mail_regex = RegExp ("^[\\w!#$%&'*+/=?`{|}~^-]+(?:\\.[\\w!#$%&'*+/=?`{|}~^-]+)*" +
+                "@(?:[A-Z0-9-]+\\.)+[A-Z]{2,6}$", "i");
+            if (!e_mail_regex.test(response)) {
+                return "Invalid e-mail address: domain must have at least two levels " +
+                    "and the top-level domain must have two to six letters";
+            }
             return true;
         }
     },
