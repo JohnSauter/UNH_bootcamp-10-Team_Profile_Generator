@@ -23,7 +23,7 @@ also contains an assets subdirectory which has files used by
 the generated HTML file.
 
 You can download a walkthrough demonstrating how to use this program from this URL:
-https://github.com/JohnSauter/UNH_bootcamp-10-Team_Profile_Generator/blob/main/assets/videos/Walkthrough_of_Team_Profile_Generator.mp4
+https://github.com/JohnSauter/UNH_bootcamp-10-Team_Profile_Generator/blob/main/assets/videos/Team_Profile_Generator_walkthrough.mp4.
 
 ## Credits
 
